@@ -20,7 +20,7 @@ public class AreasMonitoradas {
 
     @NotNull(message = "É necessário informar o Id do responsável.")
     @Column(name="ID_RESPONSAVEL")
-    private Long idResponsavel;
+    private Long idResponsavel; @NotNull(message = "É necessário informar o Id do responsável.")
 
     @NotNull(message = "É necessário que o nome da área seja informado.")
     @Size(min = 10, max = 100, message = "É necessário que o nome da área tenha entre 10 e 100 caracteres.")
@@ -29,15 +29,15 @@ public class AreasMonitoradas {
 
     @NotNull(message = "A latitude é obrigatória.")
     @Column(name = "NR_LATITUDE")
-    private int latitude;
+    private Double latitude;
 
     @NotNull(message = "A longitude é obrigatória.")
     @Column(name = "NR_LONGITUDE")
-    private int longitude;
+    private Double longitude;
 
     @NotNull(message = "O raio é obrigatório.")
     @Column(name = "NR_RAIO")
-    private int raio;
+    private Integer raio;
 
     @NotNull(message = "A descrição da área é obrigatória.")
     @Size(min = 10, max = 255, message = "A descrição da área precisa ter entre 10 e 255 caracteres.")
@@ -45,12 +45,15 @@ public class AreasMonitoradas {
     private String dsArea;
 
     @ManyToOne
-    @JoinColumn(name="ID_RESPONSAVEL", nullable=false)
+    @JoinColumn(name="ID_RESPONSAVEL", nullable=false, insertable = false, updatable = false)
     private Responsavel responsavel;
 
-    @OneToMany(mappedBy = "areaMonitorada")
-    private List<Deteccao> deteccoes;
+//    @OneToMany
+//    @JoinColumn(name="ID_AREA", referencedColumnName = "ID_AREA",nullable=false, insertable = false, updatable = false)
+//    private List<Deteccao> deteccoes;
 
-    @OneToMany(mappedBy = "areasMonitorada")
+
+    @OneToMany
+    @JoinColumn(name="ID_AREA", referencedColumnName = "ID_AREA",nullable=false, insertable = false, updatable = false)
     private List<InformacoesAmbiente> informacoesAmbientes;
 }

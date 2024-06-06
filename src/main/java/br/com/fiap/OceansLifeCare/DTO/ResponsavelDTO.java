@@ -12,5 +12,5 @@ public class ResponsavelDTO {
     private String usuario;
     private String senha;
     private String email;
-    private int telefone;
+    private Long telefone;
 }

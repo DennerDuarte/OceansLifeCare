@@ -40,8 +40,9 @@ public class Responsavel {
     private String email;
 
     @NotNull(message = "O telefone é obrigatório.")
+    @Size(min = 8, max = 15, message = "O telefone deve ter entre 8 e 15 caracteres.")
     @Column(name = "NR_TELEFONE")
-    private int telefone;
+    private Long telefone;
 
     @OneToMany(mappedBy = "responsavel")
     private List<AreasMonitoradas> areasMonitoradas;

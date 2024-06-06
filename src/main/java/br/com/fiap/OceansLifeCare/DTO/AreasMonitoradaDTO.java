@@ -11,11 +11,11 @@ public class AreasMonitoradaDTO {
 
     private Long id;
     private String nomeArea;
-    private int latitude;
-    private int longitude;
-    private int raio;
+    private Double latitude;
+    private Double longitude;
+    private Integer raio;
     private String dsArea;
     private Long idResponsavel;
-    private List<Long> idDeteccoes;
-    private List<Long> idInformacoesAmbiente;
+    //private List<DeteccaoDTO> deteccoes;
+    private List<InformacoesAmbienteDTO> informacoesAmbiente;
 }

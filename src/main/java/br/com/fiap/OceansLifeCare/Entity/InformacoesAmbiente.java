@@ -28,7 +28,7 @@ public class InformacoesAmbiente {
 
     @NotNull(message = "O nível de oxigênio é obrigatório.")
     @Column(name = "NR_NIVEL_OXIGENIO")
-    private double nivelOxigenio;
+    private Double nivelOxigenio;
 
     @NotNull(message = "A qualidade é obrigatória.")
     @Size(max = 2, message = "A qualidade deve ter até 2 caracteres.")
@@ -37,9 +37,7 @@ public class InformacoesAmbiente {
 
     @NotNull(message = "A temperatura é obrigatória.")
     @Column(name = "NR_TEMPERATURA")
-    private double temperatura;
+    private Double temperatura;
 
-    @ManyToOne
-    @JoinColumn(name="ID_AREA_MONITORADA", nullable=false)
-    private AreasMonitoradas areasMonitorada;
+
 }

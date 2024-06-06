@@ -21,11 +21,11 @@ public class Camera {
 
     @NotNull(message = "A latitude é obrigatória.")
     @Column(name = "NR_LATITUDE")
-    private int latitude;
+    private Double latitude;
 
     @NotNull(message = "A longitude é obrigatória.")
     @Column(name = "NR_LONGITUDE")
-    private int longitude;
+    private Double longitude;
 
     @NotNull(message = "A data de instalação é obrigatória.")
     @Column(name = "DT_INSTALACAO")

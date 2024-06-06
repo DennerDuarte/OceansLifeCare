@@ -36,7 +36,7 @@ public class Deteccao {
 
     @NotNull(message = "O nível de confiança é obrigatório.")
     @Column(name = "NR_NIVEL_CONFIANCA")
-    private double nivelConfianca;
+    private Double nivelConfianca;
 
     @NotNull(message = "O status é obrigatório.")
     @Size(max = 3, message = "O status deve ter até 3 caracteres.")
@@ -44,14 +44,14 @@ public class Deteccao {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name="ID_CAMERA", nullable=false)
+    @JoinColumn(name="ID_CAMERA", nullable=false, insertable = false, updatable = false)
     private Camera camera;
 
     @ManyToOne
-    @JoinColumn(name="ID_AREA", nullable=false)
+    @JoinColumn(name="ID_AREA", nullable=false, insertable = false, updatable = false)
     private AreasMonitoradas area;
 
     @ManyToOne
-    @JoinColumn(name="ID_TIPO_OBJETO", nullable=false)
+    @JoinColumn(name="ID_TIPO_OBJETO", nullable=false, insertable = false, updatable = false)
     private TipoObjeto tipo;
 }

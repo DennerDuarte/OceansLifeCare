@@ -11,8 +11,8 @@ public class InformacoesAmbienteDTO {
 
     private Long id;
     private Date dtMedicao;
-    private double nivelOxigenio;
+    private Double nivelOxigenio;
     private String qualidade;
-    private double temperatura;
+    private Double temperatura;
     private Long idAreaMonitorada;
 }

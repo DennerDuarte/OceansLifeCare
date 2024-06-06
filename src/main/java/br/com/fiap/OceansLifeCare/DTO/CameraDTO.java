@@ -10,8 +10,8 @@ import java.util.Date;
 public class CameraDTO {
 
     private Long id;
-    private int latitude;
-    private int longitude;
+    private Double latitude;
+    private Double longitude;
     private Date dataInstalacao;
     private Date dataUltimaManutecao;
     private String status;

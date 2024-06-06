@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 
 public class AreasMonitoradaFactory {
 
+    DeteccaoFactory deteccaoFactory = new DeteccaoFactory();
+    InformacoesAmbienteFactory informacoesAmbienteFactory = new InformacoesAmbienteFactory();
 
     public List<AreasMonitoradaDTO> toDto(List<AreasMonitoradas> areas){
         return Optional.ofNullable(areas)
@@ -27,6 +29,8 @@ public class AreasMonitoradaFactory {
         dto.setLongitude(area.getLongitude());
         dto.setRaio(area.getRaio());
         dto.setDsArea(area.getDsArea());
+        //dto.setDeteccoes(deteccaoFactory.toDto(area.getDeteccoes()));
+        dto.setInformacoesAmbiente(informacoesAmbienteFactory.toDto(area.getInformacoesAmbientes()));
         return dto;
     }
 
@@ -45,6 +49,8 @@ public class AreasMonitoradaFactory {
         entity.setLongitude(area.getLongitude());
         entity.setRaio(area.getRaio());
         entity.setDsArea(area.getDsArea());
+        //entity.setDeteccoes(deteccaoFactory.toEntity(area.getDeteccoes()));
+        entity.setInformacoesAmbientes(informacoesAmbienteFactory.toEntity(area.getInformacoesAmbiente()));
         return entity;
     }
 

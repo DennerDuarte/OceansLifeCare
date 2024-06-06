@@ -11,7 +11,7 @@ public class DeteccaoDTO {
 
     private Long id;
     private Date dataDeteccao;
-    private double nivelConfianca;
+    private Double nivelConfianca;
     private String status;
     private Long idCamera;
     private Long idArea;
