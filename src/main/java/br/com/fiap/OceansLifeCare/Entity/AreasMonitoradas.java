@@ -18,6 +18,10 @@ public class AreasMonitoradas {
     @Column(name="ID_AREA")
     private Long id;
 
+    @NotNull(message = "É necessário informar o Id do responsável.")
+    @Column(name="ID_RESPONSAVEL")
+    private Long idResponsavel;
+
     @NotNull(message = "É necessário que o nome da área seja informado.")
     @Size(min = 10, max = 100, message = "É necessário que o nome da área tenha entre 10 e 100 caracteres.")
     @Column(name = "NM_AREA")

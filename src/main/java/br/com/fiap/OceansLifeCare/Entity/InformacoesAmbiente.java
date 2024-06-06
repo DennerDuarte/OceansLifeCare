@@ -18,6 +18,10 @@ public class InformacoesAmbiente {
     @Column(name="ID_INFORMACAO")
     private Long id;
 
+    @NotNull(message = "O Id da Area é obrigatório")
+    @Column(name = "ID_AREA")
+    private Long idArea;
+
     @NotNull(message = "A data de medição é obrigatória.")
     @Column(name = "DT_MEDICAO")
     private Date dtMedicao;

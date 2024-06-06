@@ -24,18 +24,18 @@ public class TipoObjetoFactory {
         return dto;
     }
 
-    public List<TipoObjetoDTO> toEntity(List<TipoObjeto> tipoObjetos){
+    public List<TipoObjeto> toEntity(List<TipoObjetoDTO> tipoObjetos){
         return Optional.ofNullable(tipoObjetos)
                 .map(lista -> lista.stream().map(this::toEntity).collect(Collectors.toList()))
                 .orElse(Collections.emptyList());
     }
-    public  TipoObjetoDTO toEntity(TipoObjeto tipoObjeto) {
+    public  TipoObjeto toEntity(TipoObjetoDTO tipoObjeto) {
 
-        TipoObjetoDTO dto = new TipoObjetoDTO();
-        dto.setId(tipoObjeto.getId());
-        dto.setNomeObjeto(tipoObjeto.getNomeObjeto());
-        dto.setDescObjeto(tipoObjeto.getDescObjeto());
-        return dto;
+        TipoObjeto entity = new TipoObjeto();
+        entity.setId(tipoObjeto.getId());
+        entity.setNomeObjeto(tipoObjeto.getNomeObjeto());
+        entity.setDescObjeto(tipoObjeto.getDescObjeto());
+        return entity;
     }
 
 }

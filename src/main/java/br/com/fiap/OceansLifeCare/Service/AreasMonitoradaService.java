@@ -29,6 +29,30 @@ public class AreasMonitoradaService {
 
     public AreasMonitoradaDTO criarArea(AreasMonitoradaDTO area){
         AreasMonitoradas novaArea = areasMonitoradaRepository.save(factory.toEntity(area));
-        return factory.toDto(novaArea)
+        return factory.toDto(novaArea);
+    }
+
+    public AreasMonitoradaDTO updateArea(Long id, AreasMonitoradaDTO area){
+        AreasMonitoradas areaExistente = areasMonitoradaRepository.findById(id).orElse(null);
+
+        if (areaExistente != null){
+            AreasMonitoradas desatualizado = factory.toEntity(area);
+            desatualizado.setId(id);
+
+            AreasMonitoradas atualizado = areasMonitoradaRepository.save(desatualizado);
+            return factory.toDto(atualizado);
+        } else {
+            return factory.toDto(areaExistente);
+        }
+
+    }
+
+    public boolean deletarArea(Long id) {
+        if (areasMonitoradaRepository.existsById(id)) {
+            areasMonitoradaRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

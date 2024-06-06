@@ -18,6 +18,18 @@ public class Deteccao {
     @Column(name="ID_DETECCAO")
     private Long id;
 
+    @NotNull(message = "É necessário informar um id de uma câmera")
+    @Column(name = "ID_CAMERA")
+    private Long idCamera;
+
+    @NotNull(message = "É necessário informar um id de uma area")
+    @Column(name = "ID_AREA")
+    private Long idArea;
+
+    @NotNull(message = "É necessário informar um id de um tipo de objeto")
+    @Column(name = "ID_TIPO_OBJETO")
+    private Long idTipoObjeto;
+
     @NotNull(message = "A data de detecção é obrigatória.")
     @Column(name = "DT_DETECCAO")
     private Date dataDeteccao;

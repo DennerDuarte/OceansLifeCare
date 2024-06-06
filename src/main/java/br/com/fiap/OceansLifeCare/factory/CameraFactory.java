@@ -27,21 +27,21 @@ public class CameraFactory {
         return dto;
     }
 
-    public List<CameraDTO> toEntity(List<Camera> cameras){
+    public List<Camera> toEntity(List<CameraDTO> cameras){
         return Optional.ofNullable(cameras)
                 .map(lista -> lista.stream().map(this::toEntity).collect(Collectors.toList()))
                 .orElse(Collections.emptyList());
     }
 
-    public CameraDTO toEntity(Camera camera){
-        CameraDTO dto = new CameraDTO();
-        dto.setId(camera.getId());
-        dto.setLatitude(camera.getLatitude());
-        dto.setLongitude(camera.getLongitude());
-        dto.setDataInstalacao(camera.getDataInstalacao());
-        dto.setDataUltimaManutecao(camera.getDataUltimaManutecao());
-        dto.setStatus(camera.getStatus());
-        return dto;
+    public Camera toEntity(CameraDTO camera){
+        Camera entity = new Camera();
+        entity.setId(camera.getId());
+        entity.setLatitude(camera.getLatitude());
+        entity.setLongitude(camera.getLongitude());
+        entity.setDataInstalacao(camera.getDataInstalacao());
+        entity.setDataUltimaManutecao(camera.getDataUltimaManutecao());
+        entity.setStatus(camera.getStatus());
+        return entity;
     }
 
 }

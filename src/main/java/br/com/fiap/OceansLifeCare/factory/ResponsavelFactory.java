@@ -27,21 +27,21 @@ public class ResponsavelFactory {
         return dto;
     }
 
-    public List<ResponsavelDTO> toEntity(List<Responsavel> responsaveis){
+    public List<Responsavel> toEntity(List<ResponsavelDTO> responsaveis){
         return Optional.ofNullable(responsaveis)
                 .map(lista -> lista.stream().map(this::toEntity).collect(Collectors.toList()))
                 .orElse(Collections.emptyList());
     }
 
-    public ResponsavelDTO toEntity( Responsavel responsavel){
-        ResponsavelDTO dto = new ResponsavelDTO();
-        dto.setId(responsavel.getId());
-        dto.setResponsavel(responsavel.getResponsavel());
-        dto.setUsuario(responsavel.getUsuario());
-        dto.setSenha(responsavel.getSenha());
-        dto.setEmail(responsavel.getEmail());
-        dto.setTelefone(responsavel.getTelefone());
-        return dto;
+    public Responsavel toEntity( ResponsavelDTO responsavel){
+        Responsavel entity = new Responsavel();
+        entity.setId(responsavel.getId());
+        entity.setResponsavel(responsavel.getResponsavel());
+        entity.setUsuario(responsavel.getUsuario());
+        entity.setSenha(responsavel.getSenha());
+        entity.setEmail(responsavel.getEmail());
+        entity.setTelefone(responsavel.getTelefone());
+        return entity;
     }
 
 }
