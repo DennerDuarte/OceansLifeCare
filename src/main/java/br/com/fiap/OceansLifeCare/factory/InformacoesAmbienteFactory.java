@@ -21,7 +21,7 @@ public class InformacoesAmbienteFactory {
     public InformacoesAmbienteDTO toDto(InformacoesAmbiente informacoesAmbiente){
         InformacoesAmbienteDTO dto = new InformacoesAmbienteDTO();
         dto.setId(informacoesAmbiente.getId());
-        dto.setIdAreaMonitorada(informacoesAmbiente.getIdArea());
+        dto.setIdArea(informacoesAmbiente.getIdArea());
         dto.setTemperatura(informacoesAmbiente.getTemperatura());
         dto.setQualidade(informacoesAmbiente.getQualidade());
         dto.setNivelOxigenio(informacoesAmbiente.getNivelOxigenio());
@@ -38,7 +38,7 @@ public class InformacoesAmbienteFactory {
     public InformacoesAmbiente toEntity(InformacoesAmbienteDTO informacoesAmbiente){
         InformacoesAmbiente entity = new InformacoesAmbiente();
         entity.setId(informacoesAmbiente.getId());
-        entity.setIdArea(informacoesAmbiente.getIdAreaMonitorada());
+        entity.setIdArea(informacoesAmbiente.getIdArea());
         entity.setTemperatura(informacoesAmbiente.getTemperatura());
         entity.setQualidade(informacoesAmbiente.getQualidade());
         entity.setNivelOxigenio(informacoesAmbiente.getNivelOxigenio());

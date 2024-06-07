@@ -8,10 +8,12 @@ import br.com.fiap.OceansLifeCare.Entity.Deteccao;
 import br.com.fiap.OceansLifeCare.Repository.DeteccaoRepository;
 import br.com.fiap.OceansLifeCare.factory.DeteccaoFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class DeteccaoService {
 
     @Autowired
@@ -54,5 +56,43 @@ public class DeteccaoService {
         } else {
             return false;
         }
+    }
+
+    public DeteccaoDTO updatePartialDeteccao(Long id, DeteccaoDTO deteccao) throws Exception {
+        Optional<Deteccao> deteccaoOptional = deteccaoRepository.findById(id);
+
+        if (!deteccaoOptional.isPresent()) {
+            return null;
+        }
+
+        Deteccao deteccaoDoBanco = deteccaoOptional.get();
+
+        if (deteccao.getDataDeteccao() != null) {
+            deteccaoDoBanco.setDataDeteccao(deteccao.getDataDeteccao());
+        }
+
+        if (deteccao.getNivelConfianca() != null) {
+            deteccaoDoBanco.setNivelConfianca(deteccao.getNivelConfianca());
+        }
+
+        if (deteccao.getStatus() != null) {
+            deteccaoDoBanco.setStatus(deteccao.getStatus());
+        }
+
+        if (deteccao.getIdCamera() != null) {
+            deteccaoDoBanco.setIdCamera(deteccao.getIdCamera());
+        }
+
+        if (deteccao.getIdArea() != null) {
+            deteccaoDoBanco.setIdArea(deteccao.getIdArea());
+        }
+
+        if (deteccao.getIdTipoObjeto() != null) {
+            deteccaoDoBanco.setIdTipoObjeto(deteccao.getIdTipoObjeto());
+        }
+
+        deteccaoDoBanco = deteccaoRepository.save(deteccaoDoBanco);
+
+        return factory.toDto(deteccaoDoBanco);
     }
 }

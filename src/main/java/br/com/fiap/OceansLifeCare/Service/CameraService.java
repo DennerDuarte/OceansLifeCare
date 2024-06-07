@@ -5,10 +5,12 @@ import br.com.fiap.OceansLifeCare.Entity.Camera;
 import br.com.fiap.OceansLifeCare.Repository.CameraRepository;
 import br.com.fiap.OceansLifeCare.factory.CameraFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CameraService {
 
     @Autowired
@@ -52,4 +54,39 @@ public class CameraService {
             return false;
         }
     }
+
+    public CameraDTO updatePartialCamera(Long id, CameraDTO camera) throws Exception {
+        Optional<Camera> cameraOptional = cameraRepository.findById(id);
+
+        if (!cameraOptional.isPresent()) {
+            return null;
+        }
+
+        Camera cameraDoBanco = cameraOptional.get();
+
+        if (camera.getLatitude() != null) {
+            cameraDoBanco.setLatitude(camera.getLatitude());
+        }
+
+        if (camera.getLongitude() != null) {
+            cameraDoBanco.setLongitude(camera.getLongitude());
+        }
+
+        if (camera.getDataInstalacao() != null) {
+            cameraDoBanco.setDataInstalacao(camera.getDataInstalacao());
+        }
+
+        if (camera.getDataUltimaManutecao() != null) {
+            cameraDoBanco.setDataUltimaManutecao(camera.getDataUltimaManutecao());
+        }
+
+        if (camera.getStatus() != null) {
+            cameraDoBanco.setStatus(camera.getStatus());
+        }
+
+        cameraDoBanco = cameraRepository.save(cameraDoBanco);
+
+        return factory.toDto(cameraDoBanco);
+    }
+
 }

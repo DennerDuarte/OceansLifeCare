@@ -7,6 +7,7 @@ import br.com.fiap.OceansLifeCare.factory.AreasMonitoradaFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.geom.Area;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,4 +56,40 @@ public class AreasMonitoradaService {
             return false;
         }
     }
+
+
+    public  AreasMonitoradaDTO updatePartialArea(Long id, AreasMonitoradaDTO area) throws Exception{
+        Optional<AreasMonitoradas> areaOptional = areasMonitoradaRepository.findById(id);
+
+        if (!areaOptional.isPresent()){
+            return null;
+        }
+
+        AreasMonitoradas areaDoBanco = areaOptional.get();
+
+        if(area.getNomeArea() != null){
+            areaDoBanco.setNomeArea(area.getNomeArea());
+        }
+
+        if(area.getLatitude() != null){
+            areaDoBanco.setLatitude(area.getLatitude());
+        }
+
+        if(area.getLongitude() != null){
+            areaDoBanco.setLongitude(area.getLongitude());
+        }
+
+        if(area.getRaio() != null){
+            areaDoBanco.setRaio(area.getRaio());
+        }
+
+        if(area.getDsArea() != null){
+            areaDoBanco.setDsArea(area.getDsArea());
+        }
+
+        areaDoBanco = areasMonitoradaRepository.save(areaDoBanco);
+
+        return factory.toDto(areaDoBanco);
+    }
+
 }
