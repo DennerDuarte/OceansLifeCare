@@ -10,7 +10,7 @@
 <h2>Link da Documentação da API - Swagger UI </h2>
 <a href="https://oceanslifecare-spring-application.azurewebsites.net/swagger-ui/index.html#/">Acesse a Documentação da API clicando aqui!</a>
 
-<h2>Link da Aprensentação Pitch </h2>
+<h2>Link da Apresentação Pitch </h2>
 <a href="https://youtu.be/lcEgFItnuds">Acesse o pitch clicando aqui!</a>
 
 <h2>Link da Aprensentação Técnica </h2>
@@ -37,3 +37,6 @@
   <li>Utilize o Postman ou Insomnia para fazer requisições HTTP e interagir com os endpoints da API.</li>
   <li>Garanta que os payloads de requisição necessários estejam no formato JSON ao fazer requisições POST e PUT</li>
 </ol>
+
+<h2>Limitações</h2>
+<p>O projeto está hospedado no azure, na região East US (Estados Unidos) e infraestrutura compartilhada, para não termos custos, o que está causando demoras para o load do projeto.</p>
