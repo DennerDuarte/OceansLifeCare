@@ -1,15 +1,16 @@
 package br.com.fiap.OceansLifeCare.Service;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
 import br.com.fiap.OceansLifeCare.DTO.DeteccaoDTO;
 import br.com.fiap.OceansLifeCare.Entity.Deteccao;
 import br.com.fiap.OceansLifeCare.Factory.DeteccaoFactory;
 import br.com.fiap.OceansLifeCare.Repository.DeteccaoRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DeteccaoService {
@@ -18,9 +19,10 @@ public class DeteccaoService {
     private DeteccaoRepository deteccaoRepository;
 
     private DeteccaoFactory factory = new DeteccaoFactory();
-
-    public List<DeteccaoDTO> getAll(){
-        return factory.toDto((List<Deteccao>) deteccaoRepository.findAll());
+    
+    public Page<DeteccaoDTO> getAll(Pageable pageable){
+        Page<Deteccao> deteccoes = deteccaoRepository.findAll(pageable);
+        return deteccoes.map(factory::toDto);
     }
 
     public DeteccaoDTO getById(Long id){
