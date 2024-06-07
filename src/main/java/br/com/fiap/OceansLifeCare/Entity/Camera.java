@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -40,6 +39,6 @@ public class Camera {
     @Column(name = "DS_STATUS")
     private String status;
 
-    @OneToMany(mappedBy = "camera")
-    private List<Deteccao> deteccao;
+    //@OneToMany(mappedBy = "camera")
+    //private List<Deteccao> deteccao;
 }

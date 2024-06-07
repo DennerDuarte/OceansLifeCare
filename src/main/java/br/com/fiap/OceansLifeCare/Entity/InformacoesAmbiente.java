@@ -38,6 +38,4 @@ public class InformacoesAmbiente {
     @NotNull(message = "A temperatura é obrigatória.")
     @Column(name = "NR_TEMPERATURA")
     private Double temperatura;
-
-
 }

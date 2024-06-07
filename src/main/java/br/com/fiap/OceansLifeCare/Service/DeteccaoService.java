@@ -1,9 +1,6 @@
 package br.com.fiap.OceansLifeCare.Service;
 
-
-import br.com.fiap.OceansLifeCare.DTO.CameraDTO;
 import br.com.fiap.OceansLifeCare.DTO.DeteccaoDTO;
-import br.com.fiap.OceansLifeCare.Entity.Camera;
 import br.com.fiap.OceansLifeCare.Entity.Deteccao;
 import br.com.fiap.OceansLifeCare.Repository.DeteccaoRepository;
 import br.com.fiap.OceansLifeCare.factory.DeteccaoFactory;

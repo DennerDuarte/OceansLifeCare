@@ -1,14 +1,18 @@
 package br.com.fiap.OceansLifeCare.factory;
 
-import br.com.fiap.OceansLifeCare.DTO.DeteccaoDTO;
-import br.com.fiap.OceansLifeCare.Entity.Deteccao;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import br.com.fiap.OceansLifeCare.DTO.DeteccaoDTO;
+import br.com.fiap.OceansLifeCare.Entity.Deteccao;
+
 public class DeteccaoFactory {
+	
+	AreasMonitoradasFactory areaFactory = new AreasMonitoradasFactory();
+	TipoObjetoFactory tipoObjetoFactory = new TipoObjetoFactory();
+	CameraFactory cameraFactory = new CameraFactory();
 
     public List<DeteccaoDTO> toDto(List<Deteccao> deteccoes){
         return Optional.ofNullable(deteccoes)
@@ -25,6 +29,11 @@ public class DeteccaoFactory {
         dto.setDataDeteccao(deteccao.getDataDeteccao());
         dto.setNivelConfianca(deteccao.getNivelConfianca());
         dto.setStatus(deteccao.getStatus());
+        
+        dto.setCamera(cameraFactory.toDto(deteccao.getCamera()));
+        dto.setArea(areaFactory.toDto(deteccao.getArea()));
+		dto.setTipoObjeto(tipoObjetoFactory.toDto(deteccao.getTipoObjeto()));
+        
         return dto;
     }
 

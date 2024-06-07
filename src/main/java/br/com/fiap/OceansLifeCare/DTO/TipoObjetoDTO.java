@@ -1,6 +1,5 @@
 package br.com.fiap.OceansLifeCare.DTO;
 
-import br.com.fiap.OceansLifeCare.Controller.AreaMonitoradaController;
 import br.com.fiap.OceansLifeCare.Controller.TipoObjetoController;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,6 @@
 package br.com.fiap.OceansLifeCare.factory;
 
-import br.com.fiap.OceansLifeCare.DTO.DeteccaoDTO;
 import br.com.fiap.OceansLifeCare.DTO.InformacoesAmbienteDTO;
-import br.com.fiap.OceansLifeCare.Entity.Deteccao;
 import br.com.fiap.OceansLifeCare.Entity.InformacoesAmbiente;
 
 import java.util.Collections;

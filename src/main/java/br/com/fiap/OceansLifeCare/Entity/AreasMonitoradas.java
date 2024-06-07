@@ -20,7 +20,7 @@ public class AreasMonitoradas {
 
     @NotNull(message = "É necessário informar o Id do responsável.")
     @Column(name="ID_RESPONSAVEL")
-    private Long idResponsavel; @NotNull(message = "É necessário informar o Id do responsável.")
+    private Long idResponsavel;
 
     @NotNull(message = "É necessário que o nome da área seja informado.")
     @Size(min = 10, max = 100, message = "É necessário que o nome da área tenha entre 10 e 100 caracteres.")
@@ -47,11 +47,6 @@ public class AreasMonitoradas {
     @ManyToOne
     @JoinColumn(name="ID_RESPONSAVEL", nullable=false, insertable = false, updatable = false)
     private Responsavel responsavel;
-
-//    @OneToMany
-//    @JoinColumn(name="ID_AREA", referencedColumnName = "ID_AREA",nullable=false, insertable = false, updatable = false)
-//    private List<Deteccao> deteccoes;
-
 
     @OneToMany
     @JoinColumn(name="ID_AREA", referencedColumnName = "ID_AREA",nullable=false, insertable = false, updatable = false)

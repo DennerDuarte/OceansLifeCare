@@ -1,6 +1,6 @@
 package br.com.fiap.OceansLifeCare.Controller;
 
-import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradaDTO;
+import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradasDTO;
 import br.com.fiap.OceansLifeCare.Service.AreasMonitoradaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
@@ -20,30 +20,30 @@ public class AreaMonitoradaController {
     private AreasMonitoradaService areasMonitoradaService;
 
     @GetMapping()
-    public ResponseEntity<List<EntityModel<AreasMonitoradaDTO>>> findAll(){
-        List<AreasMonitoradaDTO> areas = areasMonitoradaService.getAll();
-        List<EntityModel<AreasMonitoradaDTO>> areasModel = areas.stream()
-                .map(AreasMonitoradaDTO::toModel)
+    public ResponseEntity<List<EntityModel<AreasMonitoradasDTO>>> findAll(){
+        List<AreasMonitoradasDTO> areas = areasMonitoradaService.getAll();
+        List<EntityModel<AreasMonitoradasDTO>> areasModel = areas.stream()
+                .map(AreasMonitoradasDTO::toModel)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(areasModel);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EntityModel<AreasMonitoradaDTO>> findById(@PathVariable Long id){
-        AreasMonitoradaDTO areaExistente = areasMonitoradaService.getById(id);
+    public ResponseEntity<EntityModel<AreasMonitoradasDTO>> findById(@PathVariable Long id){
+        AreasMonitoradasDTO areaExistente = areasMonitoradaService.getById(id);
         if(areaExistente != null){
-            return ResponseEntity.ok(AreasMonitoradaDTO.toModel(areaExistente));
+            return ResponseEntity.ok(AreasMonitoradasDTO.toModel(areaExistente));
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 
     @PostMapping()
-    public ResponseEntity<?> criarArea(@RequestBody AreasMonitoradaDTO area){
-        AreasMonitoradaDTO novoArea = areasMonitoradaService.criarArea(area);
+    public ResponseEntity<?> criarArea(@RequestBody AreasMonitoradasDTO area){
+        AreasMonitoradasDTO novoArea = areasMonitoradaService.criarArea(area);
         if( novoArea != null){
-            return ResponseEntity.status(HttpStatus.CREATED).body(AreasMonitoradaDTO.toModel(novoArea));
+            return ResponseEntity.status(HttpStatus.CREATED).body(AreasMonitoradasDTO.toModel(novoArea));
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Não foi possível realizar a operação");
         }
@@ -62,11 +62,11 @@ public class AreaMonitoradaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EntityModel<AreasMonitoradaDTO>> atualizarArea(@PathVariable Long id, @RequestBody AreasMonitoradaDTO area ){
-        AreasMonitoradaDTO areaAtualizada = areasMonitoradaService.updateArea(id, area);
+    public ResponseEntity<EntityModel<AreasMonitoradasDTO>> atualizarArea(@PathVariable Long id, @RequestBody AreasMonitoradasDTO area ){
+        AreasMonitoradasDTO areaAtualizada = areasMonitoradaService.updateArea(id, area);
 
         if(areaAtualizada != null){
-            return ResponseEntity.ok(AreasMonitoradaDTO.toModel(areaAtualizada));
+            return ResponseEntity.ok(AreasMonitoradasDTO.toModel(areaAtualizada));
         } else {
             return ResponseEntity.notFound().build();
         }
@@ -74,12 +74,12 @@ public class AreaMonitoradaController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<EntityModel<AreasMonitoradaDTO>> atualizarParcialArea(@PathVariable Long id, @RequestBody AreasMonitoradaDTO area){
+    public ResponseEntity<EntityModel<AreasMonitoradasDTO>> atualizarParcialArea(@PathVariable Long id, @RequestBody AreasMonitoradasDTO area){
         try{
-            AreasMonitoradaDTO areaAtualizada = areasMonitoradaService.updatePartialArea(id, area);
+            AreasMonitoradasDTO areaAtualizada = areasMonitoradaService.updatePartialArea(id, area);
 
             if(areaAtualizada != null){
-                return ResponseEntity.ok(AreasMonitoradaDTO.toModel(areaAtualizada));
+                return ResponseEntity.ok(AreasMonitoradasDTO.toModel(areaAtualizada));
             } else {
                 return ResponseEntity.notFound().build();
             }

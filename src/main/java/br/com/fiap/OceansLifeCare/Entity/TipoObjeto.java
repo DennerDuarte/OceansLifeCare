@@ -6,8 +6,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @Entity
@@ -28,6 +26,6 @@ public class TipoObjeto {
     @Column(name = "DS_OBJETO")
     private String descObjeto;
 
-    @OneToMany(mappedBy = "tipo")
-    private List<Deteccao> deteccoes;
+    /*@OneToMany(mappedBy = "tipo")
+    private List<Deteccao> deteccoes;*/
 }

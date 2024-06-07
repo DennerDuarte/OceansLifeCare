@@ -1,13 +1,10 @@
 package br.com.fiap.OceansLifeCare.Entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -44,6 +41,6 @@ public class Responsavel {
     @Column(name = "NR_TELEFONE")
     private Long telefone;
 
-    @OneToMany(mappedBy = "responsavel")
-    private List<AreasMonitoradas> areasMonitoradas;
+    //@OneToMany(mappedBy = "responsavel")
+    //private List<AreasMonitoradas> areasMonitoradas;
 }

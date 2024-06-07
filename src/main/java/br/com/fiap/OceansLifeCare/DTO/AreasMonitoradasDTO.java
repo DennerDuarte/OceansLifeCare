@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class AreasMonitoradaDTO {
+public class AreasMonitoradasDTO {
 
     private Long id;
     private String nomeArea;
@@ -23,26 +23,26 @@ public class AreasMonitoradaDTO {
     //private List<DeteccaoDTO> deteccoes;
     private List<InformacoesAmbienteDTO> informacoesAmbiente;
 
-    public static EntityModel<AreasMonitoradaDTO> toModel(AreasMonitoradaDTO area){
+    public static EntityModel<AreasMonitoradasDTO> toModel(AreasMonitoradasDTO area){
         Link selfLink = WebMvcLinkBuilder.linkTo(AreaMonitoradaController.class)
                 .slash(area.getId())
                 .withSelfRel();
 
-        Link getAllLink = WebMvcLinkBuilder.linkTo(AreasMonitoradaDTO.class)
+        Link getAllLink = WebMvcLinkBuilder.linkTo(AreasMonitoradasDTO.class)
                 .withRel("getAll");
 
-        Link getByIdLink = WebMvcLinkBuilder.linkTo(AreasMonitoradaDTO.class)
+        Link getByIdLink = WebMvcLinkBuilder.linkTo(AreasMonitoradasDTO.class)
                 .slash(area.getId())
                 .withRel("getById");
 
-        Link createLink = WebMvcLinkBuilder.linkTo(AreasMonitoradaDTO.class)
+        Link createLink = WebMvcLinkBuilder.linkTo(AreasMonitoradasDTO.class)
                 .withRel("create");
 
-        Link updateLink = WebMvcLinkBuilder.linkTo(AreasMonitoradaDTO.class)
+        Link updateLink = WebMvcLinkBuilder.linkTo(AreasMonitoradasDTO.class)
                 .slash(area.getId())
                 .withRel("update");
 
-        Link deleteLink = WebMvcLinkBuilder.linkTo(AreasMonitoradaDTO.class)
+        Link deleteLink = WebMvcLinkBuilder.linkTo(AreasMonitoradasDTO.class)
                 .slash(area.getId())
                 .withRel("delete");
 

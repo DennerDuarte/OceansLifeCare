@@ -1,13 +1,12 @@
 package br.com.fiap.OceansLifeCare.Service;
 
-import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradaDTO;
+import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradasDTO;
 import br.com.fiap.OceansLifeCare.Entity.AreasMonitoradas;
 import br.com.fiap.OceansLifeCare.Repository.AreasMonitoradaRepository;
-import br.com.fiap.OceansLifeCare.factory.AreasMonitoradaFactory;
+import br.com.fiap.OceansLifeCare.factory.AreasMonitoradasFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.awt.geom.Area;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,23 +16,23 @@ public class AreasMonitoradaService {
     @Autowired
     private AreasMonitoradaRepository areasMonitoradaRepository;
 
-    private final AreasMonitoradaFactory factory = new AreasMonitoradaFactory();
+    private final AreasMonitoradasFactory factory = new AreasMonitoradasFactory();
 
-    public List<AreasMonitoradaDTO> getAll(){
+    public List<AreasMonitoradasDTO> getAll(){
         return factory.toDto((List<AreasMonitoradas>) areasMonitoradaRepository.findAll());
     }
 
-    public AreasMonitoradaDTO getById(Long id){
+    public AreasMonitoradasDTO getById(Long id){
         Optional<AreasMonitoradas> areasMonitoradasOptional = areasMonitoradaRepository.findById(id);
         return areasMonitoradasOptional.map(factory::toDto).orElse(null);
     }
 
-    public AreasMonitoradaDTO criarArea(AreasMonitoradaDTO area){
+    public AreasMonitoradasDTO criarArea(AreasMonitoradasDTO area){
         AreasMonitoradas novaArea = areasMonitoradaRepository.save(factory.toEntity(area));
         return factory.toDto(novaArea);
     }
 
-    public AreasMonitoradaDTO updateArea(Long id, AreasMonitoradaDTO area){
+    public AreasMonitoradasDTO updateArea(Long id, AreasMonitoradasDTO area){
         AreasMonitoradas areaExistente = areasMonitoradaRepository.findById(id).orElse(null);
 
         if (areaExistente != null){
@@ -58,7 +57,7 @@ public class AreasMonitoradaService {
     }
 
 
-    public  AreasMonitoradaDTO updatePartialArea(Long id, AreasMonitoradaDTO area) throws Exception{
+    public  AreasMonitoradasDTO updatePartialArea(Long id, AreasMonitoradasDTO area) throws Exception{
         Optional<AreasMonitoradas> areaOptional = areasMonitoradaRepository.findById(id);
 
         if (!areaOptional.isPresent()){

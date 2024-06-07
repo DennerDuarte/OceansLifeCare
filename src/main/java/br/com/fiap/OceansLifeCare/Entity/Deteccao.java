@@ -53,5 +53,5 @@ public class Deteccao {
 
     @ManyToOne
     @JoinColumn(name="ID_TIPO_OBJETO", nullable=false, insertable = false, updatable = false)
-    private TipoObjeto tipo;
+    private TipoObjeto tipoObjeto;
 }
