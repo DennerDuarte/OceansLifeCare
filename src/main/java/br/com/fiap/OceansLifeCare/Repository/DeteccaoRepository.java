@@ -1,10 +1,11 @@
 package br.com.fiap.OceansLifeCare.Repository;
 
-import br.com.fiap.OceansLifeCare.Entity.Deteccao;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import br.com.fiap.OceansLifeCare.Entity.Deteccao;
 
 @Repository
 
-public interface DeteccaoRepository extends CrudRepository<Deteccao, Long> {
+public interface DeteccaoRepository extends JpaRepository<Deteccao, Long> {
 }

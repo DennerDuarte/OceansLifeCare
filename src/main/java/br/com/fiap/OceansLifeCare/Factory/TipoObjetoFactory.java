@@ -16,6 +16,10 @@ public class TipoObjetoFactory {
                 .orElse(Collections.emptyList());
     }
     public  TipoObjetoDTO toDto(TipoObjeto tipoObjeto) {
+    	
+    	if(tipoObjeto == null) {
+    		return null;
+    	}
 
         TipoObjetoDTO dto = new TipoObjetoDTO();
         dto.setId(tipoObjeto.getId());

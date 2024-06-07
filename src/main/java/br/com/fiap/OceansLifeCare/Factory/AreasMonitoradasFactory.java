@@ -1,5 +1,6 @@
 package br.com.fiap.OceansLifeCare.Factory;
 
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +11,9 @@ import br.com.fiap.OceansLifeCare.Entity.AreasMonitoradas;
 
 public class AreasMonitoradasFactory {
 
+	//@Autowired
 	InformacoesAmbienteFactory informacoesAmbienteFactory = new InformacoesAmbienteFactory();
-
+    
     public List<AreasMonitoradasDTO> toDto(List<AreasMonitoradas> areas){
         return Optional.ofNullable(areas)
                 .map(lista -> lista.stream().map(this::toDto).collect(Collectors.toList()))
@@ -19,6 +21,11 @@ public class AreasMonitoradasFactory {
     }
 
     public AreasMonitoradasDTO toDto(AreasMonitoradas area){
+    	
+    	if(area == null) {
+    		return null;
+    	}
+    	
         AreasMonitoradasDTO dto = new AreasMonitoradasDTO();
         dto.setId(area.getId());
         dto.setIdResponsavel(area.getIdResponsavel());

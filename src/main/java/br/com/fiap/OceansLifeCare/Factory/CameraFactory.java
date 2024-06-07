@@ -17,6 +17,11 @@ public class CameraFactory {
     }
 
     public CameraDTO toDto(Camera camera){
+    	
+    	if(camera == null) {
+    		return null;
+    	}
+    	
         CameraDTO dto = new CameraDTO();
         dto.setId(camera.getId());
         dto.setLatitude(camera.getLatitude());

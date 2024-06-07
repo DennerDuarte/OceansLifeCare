@@ -1,12 +1,14 @@
 package br.com.fiap.OceansLifeCare.DTO;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.util.Date;
+
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 
-import java.util.Date;
+import br.com.fiap.OceansLifeCare.Controller.InformacoesAmbienteController;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -20,25 +22,25 @@ public class InformacoesAmbienteDTO {
     private Long idArea;
 
     public static EntityModel<InformacoesAmbienteDTO> toModel(InformacoesAmbienteDTO informacao){
-        Link selfLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteDTO.class)
+        Link selfLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteController.class)
                 .slash(informacao.getId())
                 .withSelfRel();
 
-        Link getAllLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteDTO.class)
+        Link getAllLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteController.class)
                 .withRel("getAll");
 
-        Link getByIdLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteDTO.class)
+        Link getByIdLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteController.class)
                 .slash(informacao.getId())
                 .withRel("getById");
 
-        Link createLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteDTO.class)
+        Link createLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteController.class)
                 .withRel("create");
 
-        Link updateLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteDTO.class)
+        Link updateLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteController.class)
                 .slash(informacao.getId())
                 .withRel("update");
 
-        Link deleteLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteDTO.class)
+        Link deleteLink = WebMvcLinkBuilder.linkTo(InformacoesAmbienteController.class)
                 .slash(informacao.getId())
                 .withRel("delete");
 

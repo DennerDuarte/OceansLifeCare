@@ -1,15 +1,16 @@
 package br.com.fiap.OceansLifeCare.Service;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
 import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradasDTO;
 import br.com.fiap.OceansLifeCare.Entity.AreasMonitoradas;
 import br.com.fiap.OceansLifeCare.Factory.AreasMonitoradasFactory;
 import br.com.fiap.OceansLifeCare.Repository.AreasMonitoradaRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AreasMonitoradaService {
@@ -19,10 +20,16 @@ public class AreasMonitoradaService {
 
     private final AreasMonitoradasFactory factory = new AreasMonitoradasFactory();
 
-    public List<AreasMonitoradasDTO> getAll(){
-        return factory.toDto((List<AreasMonitoradas>) areasMonitoradaRepository.findAll());
+//    public Page<AreasMonitoradasDTO> getAll(Pageable pageable){
+//        Page<AreasMonitoradas> findAll =  areasMonitoradaRepository.findAll(pageable);
+//		return  factory.toDto(findAll);
+//    }
+    
+    public Page<AreasMonitoradasDTO> getAll(Pageable pageable){
+        Page<AreasMonitoradas> areasPaginadas = areasMonitoradaRepository.findAll(pageable);
+        return areasPaginadas.map(factory::toDto);
     }
-
+    
     public AreasMonitoradasDTO getById(Long id){
         Optional<AreasMonitoradas> areasMonitoradasOptional = areasMonitoradaRepository.findById(id);
         return areasMonitoradasOptional.map(factory::toDto).orElse(null);
