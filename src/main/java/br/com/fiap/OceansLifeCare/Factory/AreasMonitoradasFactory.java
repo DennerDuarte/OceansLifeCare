@@ -1,18 +1,16 @@
-package br.com.fiap.OceansLifeCare.factory;
-
-
-import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradasDTO;
-import br.com.fiap.OceansLifeCare.Entity.AreasMonitoradas;
+package br.com.fiap.OceansLifeCare.Factory;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradasDTO;
+import br.com.fiap.OceansLifeCare.Entity.AreasMonitoradas;
+
 public class AreasMonitoradasFactory {
 
-    DeteccaoFactory deteccaoFactory = new DeteccaoFactory();
-    InformacoesAmbienteFactory informacoesAmbienteFactory = new InformacoesAmbienteFactory();
+	InformacoesAmbienteFactory informacoesAmbienteFactory = new InformacoesAmbienteFactory();
 
     public List<AreasMonitoradasDTO> toDto(List<AreasMonitoradas> areas){
         return Optional.ofNullable(areas)

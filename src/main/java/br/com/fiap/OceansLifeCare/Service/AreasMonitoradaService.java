@@ -2,8 +2,9 @@ package br.com.fiap.OceansLifeCare.Service;
 
 import br.com.fiap.OceansLifeCare.DTO.AreasMonitoradasDTO;
 import br.com.fiap.OceansLifeCare.Entity.AreasMonitoradas;
+import br.com.fiap.OceansLifeCare.Factory.AreasMonitoradasFactory;
 import br.com.fiap.OceansLifeCare.Repository.AreasMonitoradaRepository;
-import br.com.fiap.OceansLifeCare.factory.AreasMonitoradasFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

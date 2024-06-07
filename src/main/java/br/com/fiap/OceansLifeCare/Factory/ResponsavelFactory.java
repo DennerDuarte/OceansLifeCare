@@ -1,4 +1,4 @@
-package br.com.fiap.OceansLifeCare.factory;
+package br.com.fiap.OceansLifeCare.Factory;
 
 import br.com.fiap.OceansLifeCare.DTO.ResponsavelDTO;
 import br.com.fiap.OceansLifeCare.Entity.Responsavel;

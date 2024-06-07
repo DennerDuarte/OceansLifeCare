@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/InformacoesAmbiente")
+@RequestMapping("/informacaoAmbiente")
 public class InformacoesAmbienteController {
 
     @Autowired

@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 
 @RestController
-@RequestMapping("/AreaMonitorada")
+@RequestMapping("/areaMonitorada")
 public class AreaMonitoradaController {
 
     @Autowired

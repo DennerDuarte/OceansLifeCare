@@ -31,7 +31,7 @@ public class Camera {
     private Date dataInstalacao;
 
     @NotNull(message = "A data da última manutenção é obrigatória.")
-    @Column(name = "DT_ULTIMA_MANUTENCAO")
+    @Column(name = "DT_ULT_MANUTENCAO")
     private Date dataUltimaManutecao;
 
     @NotNull(message = "O status é obrigatório.")
