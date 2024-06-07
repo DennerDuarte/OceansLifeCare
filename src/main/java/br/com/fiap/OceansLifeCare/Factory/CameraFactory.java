@@ -1,4 +1,4 @@
-package br.com.fiap.OceansLifeCare.factory;
+package br.com.fiap.OceansLifeCare.Factory;
 
 import br.com.fiap.OceansLifeCare.DTO.CameraDTO;
 import br.com.fiap.OceansLifeCare.Entity.Camera;

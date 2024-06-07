@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="T_TIPO_OBJETOS")
+@Table(name="T_TIPOS_OBJETOS")
 public class TipoObjeto {
 
     @Id

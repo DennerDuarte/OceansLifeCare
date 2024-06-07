@@ -2,8 +2,9 @@ package br.com.fiap.OceansLifeCare.Service;
 
 import br.com.fiap.OceansLifeCare.DTO.TipoObjetoDTO;
 import br.com.fiap.OceansLifeCare.Entity.TipoObjeto;
+import br.com.fiap.OceansLifeCare.Factory.TipoObjetoFactory;
 import br.com.fiap.OceansLifeCare.Repository.TipoObjetoRepository;
-import br.com.fiap.OceansLifeCare.factory.TipoObjetoFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

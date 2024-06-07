@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Cameras")
+@RequestMapping("/camera")
 public class CameraController {
 
     @Autowired

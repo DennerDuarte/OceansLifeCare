@@ -1,4 +1,4 @@
-package br.com.fiap.OceansLifeCare.factory;
+package br.com.fiap.OceansLifeCare.Factory;
 
 import java.util.Collections;
 import java.util.List;

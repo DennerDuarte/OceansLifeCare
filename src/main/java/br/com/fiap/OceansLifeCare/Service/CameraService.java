@@ -2,8 +2,9 @@ package br.com.fiap.OceansLifeCare.Service;
 
 import br.com.fiap.OceansLifeCare.DTO.CameraDTO;
 import br.com.fiap.OceansLifeCare.Entity.Camera;
+import br.com.fiap.OceansLifeCare.Factory.CameraFactory;
 import br.com.fiap.OceansLifeCare.Repository.CameraRepository;
-import br.com.fiap.OceansLifeCare.factory.CameraFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

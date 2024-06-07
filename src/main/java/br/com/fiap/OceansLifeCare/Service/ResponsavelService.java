@@ -2,8 +2,9 @@ package br.com.fiap.OceansLifeCare.Service;
 
 import br.com.fiap.OceansLifeCare.DTO.ResponsavelDTO;
 import br.com.fiap.OceansLifeCare.Entity.Responsavel;
+import br.com.fiap.OceansLifeCare.Factory.ResponsavelFactory;
 import br.com.fiap.OceansLifeCare.Repository.ResponsavelRepository;
-import br.com.fiap.OceansLifeCare.factory.ResponsavelFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

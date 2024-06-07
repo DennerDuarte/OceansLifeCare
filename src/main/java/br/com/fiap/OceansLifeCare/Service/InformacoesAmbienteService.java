@@ -2,8 +2,9 @@ package br.com.fiap.OceansLifeCare.Service;
 
 import br.com.fiap.OceansLifeCare.DTO.InformacoesAmbienteDTO;
 import br.com.fiap.OceansLifeCare.Entity.InformacoesAmbiente;
+import br.com.fiap.OceansLifeCare.Factory.InformacoesAmbienteFactory;
 import br.com.fiap.OceansLifeCare.Repository.InformacoesAmbienteRepository;
-import br.com.fiap.OceansLifeCare.factory.InformacoesAmbienteFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
