@@ -14,7 +14,7 @@
 <a href="https://youtu.be/lcEgFItnuds">Acesse o pitch clicando aqui!</a>
 
 <h2>Link da Aprensentação Técnica </h2>
-<a href="">Acesse a apresentação técnica clicando aqui!</a>
+<a href="https://youtu.be/cg73gmo74gk">Acesse a apresentação técnica clicando aqui!</a>
 
 <h2>Tecnologias Utilizadas</h2>
 <ul>
